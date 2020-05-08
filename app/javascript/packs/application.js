@@ -4,7 +4,10 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("channels")
+var jQuery = require('jquery')
+
+global.$ = global.jQuery = jQuery
+window.$ = window.jQuery = jQuery
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -13,3 +16,6 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+require("bootstrap")
+
+require("./includes/properties")
