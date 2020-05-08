@@ -1,4 +1,4 @@
-class PhotoUploader < CarrierWave::Uploader::Base
+class ProfilePictureUploader < CarrierWave::Uploader::Base
 
     include CarrierWave::MiniMagick
 
@@ -15,7 +15,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
 
     version :thumb do
-        process :resize_to_fit => [300, 200]
+        process :resize_to_fit => [300, 300]
     end
     
 
