@@ -18,7 +18,6 @@
     <header>
       <%= render "layouts/nav/public" %>
       <%= yield %>
-      <p><%= @show_sidebar.present?%></p>
     </header>
     <% else %>
       <%= render "layouts/nav/dashboard" %>

@@ -10,6 +10,7 @@
       <th>Price</th>
       <th>Rooms</th>
       <th>Bathrooms</th>
+      <th>Parking Spaces</th>
       <th>Size</th>
       <th colspan="3"></th>
     </tr>
@@ -23,6 +24,7 @@
         <td><%= property.price %></td>
         <td><%= property.rooms %></td>
         <td><%= property.bathrooms %></td>
+        <td><%= property.parking_spaces %></td>
         <td><%= property.size %></td>
         <td><%= link_to 'Show', property %></td>
         <td><%= link_to 'Edit', edit_property_path(property) %></td>

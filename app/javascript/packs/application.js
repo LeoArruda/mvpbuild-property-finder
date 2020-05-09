@@ -16,6 +16,8 @@ window.$ = window.jQuery = jQuery
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
 require("bootstrap")
+require("@fortawesome/fontawesome-free/js/all.js");
 
 require("./includes/properties")
