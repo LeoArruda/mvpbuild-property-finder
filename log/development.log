@@ -14317,3 +14317,127 @@ Processing by DashboardController#index as HTML
 Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.4ms | Allocations: 10797)
 
 
+Started GET "/dashboard" for 127.0.0.1 at 2020-05-09 15:32:25 -0400
+Processing by DashboardController#index as HTML
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 248)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_dashboard.html.erb (Duration: 1.0ms | Allocations: 174)
+  Rendered layouts/nav/_sidebar.html.erb (Duration: 0.7ms | Allocations: 398)
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 ORDER BY "accounts"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_footer.html.erb:5
+  Rendered layouts/_footer.html.erb (Duration: 26.3ms | Allocations: 14431)
+Completed 200 OK in 74ms (Views: 63.8ms | ActiveRecord: 7.3ms | Allocations: 27118)
+
+
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /usr/local/bin/rake:23)
+Started GET "/dashboard" for 127.0.0.1 at 2020-05-09 15:42:48 -0400
+Processing by DashboardController#index as HTML
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 245)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_dashboard.html.erb (Duration: 14.5ms | Allocations: 173)
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 ORDER BY "accounts"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/nav/_sidebar.html.erb:42
+  Rendered layouts/nav/_sidebar.html.erb (Duration: 19.9ms | Allocations: 14318)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 116)
+Completed 200 OK in 66ms (Views: 62.3ms | ActiveRecord: 1.1ms | Allocations: 26713)
+
+
+Started GET "/profile/1" for 127.0.0.1 at 2020-05-09 15:42:51 -0400
+Processing by DashboardController#profile as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:9:in `profile'
+  Rendering dashboard/profile.html.erb within layouts/application
+  Rendered dashboard/profile.html.erb within layouts/application (Duration: 223.9ms | Allocations: 109092)
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 0.4ms | Allocations: 110167)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `account' for #<#<Class:0x00007fefd5e24420>:0x00007fefd33c8f50>
+Did you mean?  @account):
+    1: <p><%= account.full_name %></p>
+  
+app/views/dashboard/profile.html.erb:1
+Started GET "/profile/1" for 127.0.0.1 at 2020-05-09 15:43:28 -0400
+Processing by DashboardController#profile as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:9:in `profile'
+  Rendering dashboard/profile.html.erb within layouts/application
+  Rendered dashboard/profile.html.erb within layouts/application (Duration: 0.6ms | Allocations: 107)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_dashboard.html.erb (Duration: 0.9ms | Allocations: 167)
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 ORDER BY "accounts"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/nav/_sidebar.html.erb:42
+  Rendered layouts/nav/_sidebar.html.erb (Duration: 3.1ms | Allocations: 1410)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 115)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.9ms | Allocations: 13572)
+
+
+Started GET "/accounts/edit" for 127.0.0.1 at 2020-05-09 15:43:35 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 ORDER BY "accounts"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 214)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 15.4ms | Allocations: 4674)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 0.9ms | Allocations: 402)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.5ms | Allocations: 17098)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-09 15:43:43 -0400
+Processing by PublicController#main as HTML
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 ORDER BY "accounts"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public_controller.rb:4:in `main'
+Redirected to http://127.0.0.1:3000/dashboard
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1257)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2020-05-09 15:43:43 -0400
+Processing by DashboardController#index as HTML
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 245)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_dashboard.html.erb (Duration: 0.1ms | Allocations: 58)
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 ORDER BY "accounts"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/nav/_sidebar.html.erb:42
+  Rendered layouts/nav/_sidebar.html.erb (Duration: 2.1ms | Allocations: 1081)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 11)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.4ms | Allocations: 11239)
+
+
+Started GET "/properties" for 127.0.0.1 at 2020-05-09 15:43:45 -0400
+Processing by PropertiesController#index as HTML
+  Rendering properties/index.html.erb within layouts/application
+  [1m[36mProperty Load (1.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/properties/index.html.erb:20
+  Rendered properties/index.html.erb within layouts/application (Duration: 25.7ms | Allocations: 9589)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_dashboard.html.erb (Duration: 0.2ms | Allocations: 49)
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 ORDER BY "accounts"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/nav/_sidebar.html.erb:42
+  Rendered layouts/nav/_sidebar.html.erb (Duration: 3.4ms | Allocations: 1081)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 11)
+Completed 200 OK in 49ms (Views: 33.0ms | ActiveRecord: 11.6ms | Allocations: 22161)
+
+
+Started GET "/profile/1" for 127.0.0.1 at 2020-05-09 15:44:24 -0400
+Processing by DashboardController#profile as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:9:in `profile'
+  Rendering dashboard/profile.html.erb within layouts/application
+  Rendered dashboard/profile.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_dashboard.html.erb (Duration: 0.1ms | Allocations: 58)
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 ORDER BY "accounts"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/nav/_sidebar.html.erb:42
+  Rendered layouts/nav/_sidebar.html.erb (Duration: 2.1ms | Allocations: 1081)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 11)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.8ms | Allocations: 11415)
+
+
