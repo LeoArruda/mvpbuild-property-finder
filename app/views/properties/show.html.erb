@@ -9,34 +9,44 @@
     <div class="col-md-8">
       <div class="row">
         <div class="col-lg-6">
-          <p class="mb-0"><%= @property.address%></p>
-          <p class="h2 mb-3"><%= @property.price > 0 ? number_to_currency(@property.price, precision: 0) : "For Sale" %></p>
+          <p class="h4 mb-0"><%= @property.for_sale ? "For Sale" : "For Rent"%></p>
+          <p class="mb-2"><%= @property.address%></p>
+          <p class="h2 mb-3">
+            <% if @property.for_sale? %>
+              <%= @property.price > 0 ? number_to_currency(@property.price, precision: 0) : "Offers Accepted" %>
+            <% else %>
+              <%= @property.price > 0 ? number_to_currency(@property.price, precision: 0) : "Open for Enquiries" %> / month
+            <% end %>  
+          </p>
         </div>
         <div class="col-lg-6 text-center">
-          <div class="row mr-sm-3 mt-sm-3 bg-light p-3">
+          <div class="row mt-sm-2 bg-light p-3">
             <div class="col-4">
-              <p class="m-0">
-                <strong>Rooms</strong>
-              </p>
-              <i class="fas fa-bed"></i>
-              <span class="lead"><%= @property.rooms %></span>
+              <i class="fas fa-bed text-muted m-0"></i>
+              <small><%= @property.rooms %></small>
+              <p class="m-0"><small>Bedrooms</small>
             </div>
             <div class="col-4">
-              <p class="m-0"><strong>Bathrooms</strong></p>
+              <i class="fas fa-bath text-muted m-0"></i>
+              <small><%= @property.bathrooms %></small>
+              <p class="m-0"><small>Bathrooms</small>
               
-              <span class="lead"><i class="fas fa-bath"></i> <%= @property.bathrooms %></span>
             </div>
             <div class="col-4">
-              <p class="m-0 "><strong>Parking</strong></p>
-              <i class="fas fa-car"></i>
-              <span class="lead"><%= @property.parking_spaces %></span>
+              <i class="fas fa-car text-muted m-0"></i>
+              <small><%= @property.parking_spaces %></small>
+              <p class="m-0 "><small>Parking</small></p>
             </div>
           </div>
         </div>
       </div>
       <div class="row border-top border-bottom mt-5 mb-5 pt-4 pb-4">
         <div class="col-6">
-          <strong><%= link_to "Est. Monthly Payments of #{number_to_currency(((@property.price - (@property.price * 0.1)) / 360), precision: 0)} *","#", class: "text-success"%></strong>
+          <% if @property.for_sale? %>
+              <strong><%= link_to "Est. Monthly Payments of #{number_to_currency(((@property.price - (@property.price * 0.1)) / 360), precision: 0)} *","#", class: "text-success"%></strong>
+            <% else %>
+              <strong>Avaliable from <%= @property.available_date.strftime("%a") %>, <%= @property.available_date.day.ordinalize %> <%= @property.available_date.strftime("%B") %></strong>
+            <% end %> 
         </div>
         <div class="col-6 text-right">
           <strong><%= link_to "Can I afford this property?", "#", class: "text-success" %></strong>
@@ -49,7 +59,7 @@
           <div id="prop-details">
             <%= simple_format @property.details %>
           </div>
-          <button class="btn btn-outline mt-3" id="toggleDetails">Show More</button>
+          <button class="btn btn-outline-primary mt-3" id="toggleDetails">Show More</button>
           <p class="mt-5">* This rate is based on a 30 years morgage, after paying an initial 10% down payment. Shorter term morgahes would require a higher monthly repayment.</p>
           
         </div>
@@ -57,14 +67,47 @@
     </div>
     <div class="col-md-4">
       <%= render  "properties/agent_details" %>
+      <iframe class="ml-lg-4 mt-3" width="320" height="240" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/MODE?key=AIzaSyDGEepV8Om8LEoqYbIzFLvrFfp2184niTk&q=<%=@property.address.to_param%> allowfullscreen"></iframe>
       <p class="h4"></p>
     </div>
   </div> 
 </div>
 
+<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message for <%= @agent.first_name %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section class="mt-5 mb-5">
     <div class="container">
       <div class="row">
+        <div class="col-12">
+          <p class="h3 mb-3">Other properties by this agent</p>
+        </div>
         <%= render "properties/list", properties: @agent_properties%>
       </div>
     </div>
