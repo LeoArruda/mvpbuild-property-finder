@@ -26,6 +26,23 @@ class PropertiesController < ApplicationController
   def edit
   end
 
+  # POST
+  def email_agent
+    # trigger email send
+    agent_id = params[:agent_id]
+    first_name = params[:first_name]
+    last_name = params[:last_name]
+    email = params[:email]
+    message = params[:message]
+
+    ContactMailer.email_agent(agent_id, first_name, last_name, email, message).deliver_now
+
+    # response to script
+    respond_to do |format|
+      format.json { head :no_content }
+    end
+  end
+
   # POST /properties
   # POST /properties.json
   def create
