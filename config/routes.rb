@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :posts
   devise_for :accounts
+  resources :posts
   resources :properties
 
   # admin routes

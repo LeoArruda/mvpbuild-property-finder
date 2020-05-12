@@ -23321,3 +23321,64 @@ Migrating to CreatePosts (20200512035809)
   [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6220414034348042130)[0m
   [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/profile/1" for 127.0.0.1 at 2020-05-12 00:09:36 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DashboardController#profile as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 ORDER BY "accounts"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:21:in `set_sidebar'
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:9:in `profile'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties" WHERE "properties"."account_id" = $1 AND "properties"."for_sale" = $2 AND "properties"."status" = $3[0m  [["account_id", 1], ["for_sale", true], ["status", "sold"]]
+  ↳ app/controllers/dashboard_controller.rb:13:in `profile'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties" WHERE "properties"."account_id" = $1 AND "properties"."for_sale" = $2 AND "properties"."status" = $3[0m  [["account_id", 1], ["for_sale", true], ["status", "available"]]
+  ↳ app/controllers/dashboard_controller.rb:14:in `profile'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties" WHERE "properties"."account_id" = $1 AND "properties"."for_sale" = $2 AND "properties"."status" = $3[0m  [["account_id", 1], ["for_sale", false], ["status", "leased"]]
+  ↳ app/controllers/dashboard_controller.rb:15:in `profile'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties" WHERE "properties"."account_id" = $1 AND "properties"."for_sale" = $2 AND "properties"."status" = $3[0m  [["account_id", 1], ["for_sale", false], ["status", "available"]]
+  ↳ app/controllers/dashboard_controller.rb:16:in `profile'
+  Rendering dashboard/profile.html.erb within layouts/application
+  Rendered properties/_profile_contact_details.html.erb (Duration: 1.5ms | Allocations: 320)
+  [1m[36mProperty Load (0.8ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."account_id" = $1[0m  [["account_id", 1]]
+  ↳ app/views/properties/_list.html.erb:1
+  Rendered properties/_list.html.erb (Duration: 18.8ms | Allocations: 10317)
+  Rendered properties/_send_email_modal.html.erb (Duration: 1.1ms | Allocations: 525)
+  Rendered dashboard/profile.html.erb within layouts/application (Duration: 25.2ms | Allocations: 12454)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_dashboard.html.erb (Duration: 0.7ms | Allocations: 167)
+  Rendered layouts/nav/_admin.html.erb (Duration: 1.0ms | Allocations: 357)
+  Rendered layouts/nav/_sidebar.html.erb (Duration: 2.9ms | Allocations: 884)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 115)
+Completed 200 OK in 1011ms (Views: 957.8ms | ActiveRecord: 4.6ms | Allocations: 122458)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-05-12 00:09:38 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (6.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:19
+  Rendered posts/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 1673)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 ORDER BY "accounts"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/nav/_public.html.erb:2
+  Rendered layouts/nav/_public.html.erb (Duration: 3.1ms | Allocations: 1379)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 35ms (Views: 22.1ms | ActiveRecord: 9.9ms | Allocations: 13866)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-05-12 00:12:19 -0400
+Processing by PostsController#index as HTML
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 ORDER BY "accounts"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:81:in `can_access?'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:19
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1101)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_dashboard.html.erb (Duration: 0.1ms | Allocations: 50)
+  Rendered layouts/nav/_admin.html.erb (Duration: 0.1ms | Allocations: 111)
+  Rendered layouts/nav/_sidebar.html.erb (Duration: 0.4ms | Allocations: 266)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+Completed 200 OK in 59ms (Views: 22.8ms | ActiveRecord: 9.8ms | Allocations: 29323)
+
+
