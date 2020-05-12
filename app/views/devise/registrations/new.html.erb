@@ -19,6 +19,11 @@
 
   <div class="field">
     <br/>
+    <%= f.text_field :first_name, class: "form-control", placeholder: "Last Name"%>
+  </div>
+
+  <div class="field">
+    <br/>
     
     <% if @minimum_password_length %>
     <em>(Password <%= @minimum_password_length %> characters minimum)</em>
