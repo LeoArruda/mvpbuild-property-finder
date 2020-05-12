@@ -12,4 +12,5 @@ module PropertiesHelper
     def property_photo_url property
         property.photo.present? ? property.photo.url : asset_url("placeholder.png")
     end
+
 end
