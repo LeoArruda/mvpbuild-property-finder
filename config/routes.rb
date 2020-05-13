@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # admin routes
   get "/accounts" => 'admin#accounts', as: :accounts
 
+  # blog routes
+  get "/blog" => 'posts#latest', as: :blog
+
   get "/dashboard" => 'dashboard#index', as: :dashboard
   get "/profile/:id" => 'dashboard#profile', as: :profile
 
