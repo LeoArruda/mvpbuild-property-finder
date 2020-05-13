@@ -18,9 +18,21 @@ body {
 #home-banner .jumbotron {
     background: image-url("banners/house.jpg") no-repeat center top;
     background-size: cover;
-    color: #fff;
+}
 
+#blog-latest .jumbotron {
+    background: image-url("banners/house.jpg") no-repeat center top;
+    background-size: cover;
+}
+
+#blog-banner .jumbotron {
+    background: image-url("banners/house.jpg") no-repeat center top;
+    background-size: cover;
+}
+
+.main-banner .jumbotron {
     h1, p {
         text-shadow: 1px 1px 2px #777;
+        color: #fff;
     }
 }

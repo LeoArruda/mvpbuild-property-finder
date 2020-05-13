@@ -25003,3 +25003,295 @@ Processing by PublicController#main as HTML
 Completed 200 OK in 945ms (Views: 941.0ms | ActiveRecord: 2.2ms | Allocations: 89549)
 
 
+Started GET "/" for 127.0.0.1 at 2020-05-13 00:06:59 -0400
+Processing by PublicController#main as HTML
+  Rendering public/main.html.erb within layouts/application
+  [1m[36mProperty Load (7.2ms)[0m  [1m[34mSELECT "properties".* FROM "properties" ORDER BY "properties"."created_at" DESC[0m
+  ↳ app/views/properties/_list.html.erb:1
+  Rendered properties/_list.html.erb (Duration: 13.7ms | Allocations: 1625)
+  [1m[36mPost Load (11.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/_list.html.erb:1
+  Rendered posts/_list.html.erb (Duration: 15.4ms | Allocations: 1006)
+  Rendered public/main.html.erb within layouts/application (Duration: 34.8ms | Allocations: 3222)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 1.4ms | Allocations: 580)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 148)
+Completed 200 OK in 111ms (Views: 90.6ms | ActiveRecord: 19.0ms | Allocations: 15862)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-13 00:13:08 -0400
+Processing by PublicController#main as HTML
+  Rendering public/main.html.erb within layouts/application
+  [1m[36mProperty Load (1.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" ORDER BY "properties"."created_at" DESC[0m
+  ↳ app/views/properties/_list.html.erb:1
+  Rendered properties/_list.html.erb (Duration: 4.8ms | Allocations: 1624)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/_list.html.erb:1
+  Rendered posts/_list.html.erb (Duration: 3.8ms | Allocations: 1006)
+  Rendered public/main.html.erb within layouts/application (Duration: 10.4ms | Allocations: 3212)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 1.1ms | Allocations: 553)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 148)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 2.0ms | Allocations: 15816)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-13 00:14:37 -0400
+Processing by PublicController#main as HTML
+  Rendering public/main.html.erb within layouts/application
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" ORDER BY "properties"."created_at" DESC[0m
+  ↳ app/views/properties/_list.html.erb:1
+  Rendered properties/_list.html.erb (Duration: 3.8ms | Allocations: 1507)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/_list.html.erb:1
+  Rendered posts/_list.html.erb (Duration: 2.6ms | Allocations: 1006)
+  Rendered public/main.html.erb within layouts/application (Duration: 8.4ms | Allocations: 3095)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 1.0ms | Allocations: 553)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 148)
+Completed 200 OK in 40ms (Views: 37.5ms | ActiveRecord: 0.8ms | Allocations: 15693)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-13 00:18:09 -0400
+Processing by PublicController#main as HTML
+  Rendering public/main.html.erb within layouts/application
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" ORDER BY "properties"."created_at" DESC[0m
+  ↳ app/views/properties/_list.html.erb:1
+  Rendered properties/_list.html.erb (Duration: 3.9ms | Allocations: 1508)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/_list.html.erb:1
+  Rendered posts/_list.html.erb (Duration: 2.5ms | Allocations: 1006)
+  Rendered public/main.html.erb within layouts/application (Duration: 8.4ms | Allocations: 3103)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 1.5ms | Allocations: 552)
+  Rendered layouts/_footer.html.erb (Duration: 1.5ms | Allocations: 148)
+Completed 200 OK in 43ms (Views: 40.6ms | ActiveRecord: 0.9ms | Allocations: 15713)
+
+
+Started GET "/blog" for 127.0.0.1 at 2020-05-13 00:22:18 -0400
+Processing by PostsController#latest as HTML
+  Rendering posts/latest.html.erb within layouts/application
+  [1m[36mPost Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."active" = $1 LIMIT $2[0m  [["active", true], ["LIMIT", 1]]
+  ↳ app/views/posts/latest.html.erb:13
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."active" = $1[0m  [["active", true]]
+  ↳ app/views/posts/latest.html.erb:16
+  Rendered posts/latest.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1603)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 1.3ms | Allocations: 605)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 148)
+Completed 200 OK in 884ms (Views: 881.1ms | ActiveRecord: 1.5ms | Allocations: 91026)
+
+
+Started GET "/blog" for 127.0.0.1 at 2020-05-13 00:22:45 -0400
+Processing by PostsController#latest as HTML
+  Rendering posts/latest.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."active" = $1 LIMIT $2[0m  [["active", true], ["LIMIT", 1]]
+  ↳ app/views/posts/latest.html.erb:13
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."active" = $1[0m  [["active", true]]
+  ↳ app/views/posts/latest.html.erb:16
+  Rendered posts/latest.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1547)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 1.4ms | Allocations: 598)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 148)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.7ms | Allocations: 14087)
+
+
+Started GET "/blog" for 127.0.0.1 at 2020-05-13 00:27:32 -0400
+Processing by PostsController#latest as HTML
+  Rendering posts/latest.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."active" = $1 LIMIT $2[0m  [["active", true], ["LIMIT", 1]]
+  ↳ app/views/posts/latest.html.erb:13
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."active" = $1[0m  [["active", true]]
+  ↳ app/views/posts/latest.html.erb:16
+  Rendered posts/latest.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1545)
+Completed 500 Internal Server Error in 449ms (ActiveRecord: 0.7ms | Allocations: 44868)
+
+
+  
+ActionView::Template::Error (Error: Invalid CSS after "}": expected "}", was ""
+        on line 31:2 of app/assets/stylesheets/public.scss
+>> }
+
+   -^
+):
+     7:     <!-- 
+     8:     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     9:     -->
+    10:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    11:     <%= javascript_pack_tag 'application' %>
+    12: 
+    13:     <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_url "favicon/apple-touch-icon.png" %>">
+  
+app/assets/stylesheets/public.scss:31
+app/views/layouts/application.html.erb:10
+Started GET "/blog" for 127.0.0.1 at 2020-05-13 00:28:07 -0400
+Processing by PostsController#latest as HTML
+  Rendering posts/latest.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."active" = $1 LIMIT $2[0m  [["active", true], ["LIMIT", 1]]
+  ↳ app/views/posts/latest.html.erb:13
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."active" = $1[0m  [["active", true]]
+  ↳ app/views/posts/latest.html.erb:16
+  Rendered posts/latest.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1306)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 1.2ms | Allocations: 603)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 148)
+Completed 200 OK in 855ms (Views: 853.3ms | ActiveRecord: 0.6ms | Allocations: 90954)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-13 00:30:23 -0400
+Processing by PublicController#main as HTML
+  Rendering public/main.html.erb within layouts/application
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" ORDER BY "properties"."created_at" DESC[0m
+  ↳ app/views/properties/_list.html.erb:1
+  Rendered properties/_list.html.erb (Duration: 5.2ms | Allocations: 1508)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/_list.html.erb:1
+  Rendered posts/_list.html.erb (Duration: 2.7ms | Allocations: 1006)
+  Rendered public/main.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3104)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 0.5ms | Allocations: 214)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 43)
+Completed 200 OK in 41ms (Views: 37.9ms | ActiveRecord: 0.9ms | Allocations: 14363)
+
+
+Started GET "/blog" for 127.0.0.1 at 2020-05-13 00:30:31 -0400
+Processing by PostsController#latest as HTML
+  Rendering posts/latest.html.erb within layouts/application
+  [1m[36mPost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."active" = $1 LIMIT $2[0m  [["active", true], ["LIMIT", 1]]
+  ↳ app/views/posts/latest.html.erb:13
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."active" = $1[0m  [["active", true]]
+  ↳ app/views/posts/latest.html.erb:16
+  Rendered posts/latest.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1306)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 0.5ms | Allocations: 261)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 43)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.7ms | Allocations: 12025)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2020-05-13 00:30:34 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:74:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 578)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 0.4ms | Allocations: 260)
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 43)
+Completed 200 OK in 69ms (Views: 66.1ms | ActiveRecord: 0.5ms | Allocations: 11926)
+
+
+Started GET "/blog" for 127.0.0.1 at 2020-05-13 00:30:42 -0400
+Processing by PostsController#latest as HTML
+  Rendering posts/latest.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."active" = $1 LIMIT $2[0m  [["active", true], ["LIMIT", 1]]
+  ↳ app/views/posts/latest.html.erb:13
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."active" = $1[0m  [["active", true]]
+  ↳ app/views/posts/latest.html.erb:16
+  Rendered posts/latest.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1303)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 0.5ms | Allocations: 256)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 43)
+Completed 200 OK in 55ms (Views: 54.0ms | ActiveRecord: 0.9ms | Allocations: 12007)
+
+
+Started GET "/blog" for 127.0.0.1 at 2020-05-13 00:32:06 -0400
+Processing by PostsController#latest as HTML
+  Rendering posts/latest.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."active" = $1 LIMIT $2[0m  [["active", true], ["LIMIT", 1]]
+  ↳ app/views/posts/latest.html.erb:13
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."active" = $1[0m  [["active", true]]
+  ↳ app/views/posts/latest.html.erb:16
+  Rendered posts/latest.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1547)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 1.7ms | Allocations: 603)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 148)
+Completed 200 OK in 113ms (Views: 111.5ms | ActiveRecord: 0.6ms | Allocations: 14108)
+
+
+Started GET "/blog" for 127.0.0.1 at 2020-05-13 00:32:41 -0400
+Processing by PostsController#latest as HTML
+  Rendering posts/latest.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."active" = $1 LIMIT $2[0m  [["active", true], ["LIMIT", 1]]
+  ↳ app/views/posts/latest.html.erb:13
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."active" = $1[0m  [["active", true]]
+  ↳ app/views/posts/latest.html.erb:16
+  Rendered posts/latest.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1307)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 0.4ms | Allocations: 260)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 43)
+Completed 200 OK in 863ms (Views: 861.7ms | ActiveRecord: 0.5ms | Allocations: 89880)
+
+
+Started GET "/blog" for 127.0.0.1 at 2020-05-13 00:33:27 -0400
+Processing by PostsController#latest as HTML
+  Rendering posts/latest.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."active" = $1 LIMIT $2[0m  [["active", true], ["LIMIT", 1]]
+  ↳ app/views/posts/latest.html.erb:13
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."active" = $1[0m  [["active", true]]
+  ↳ app/views/posts/latest.html.erb:16
+  Rendered posts/latest.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1302)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 0.4ms | Allocations: 256)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 43)
+Completed 200 OK in 820ms (Views: 818.6ms | ActiveRecord: 0.5ms | Allocations: 89302)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-13 00:33:36 -0400
+Processing by PublicController#main as HTML
+  Rendering public/main.html.erb within layouts/application
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" ORDER BY "properties"."created_at" DESC[0m
+  ↳ app/views/properties/_list.html.erb:1
+  Rendered properties/_list.html.erb (Duration: 3.7ms | Allocations: 1509)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/_list.html.erb:1
+  Rendered posts/_list.html.erb (Duration: 2.3ms | Allocations: 1006)
+  Rendered public/main.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3104)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 0.3ms | Allocations: 214)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 43)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.9ms | Allocations: 14356)
+
+
+Started GET "/blog" for 127.0.0.1 at 2020-05-13 00:33:45 -0400
+Processing by PostsController#latest as HTML
+  Rendering posts/latest.html.erb within layouts/application
+  [1m[36mPost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."active" = $1 LIMIT $2[0m  [["active", true], ["LIMIT", 1]]
+  ↳ app/views/posts/latest.html.erb:13
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."active" = $1[0m  [["active", true]]
+  ↳ app/views/posts/latest.html.erb:16
+  Rendered posts/latest.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1306)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 0.4ms | Allocations: 261)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 43)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.7ms | Allocations: 12018)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2020-05-13 00:33:47 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:74:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 577)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 0.5ms | Allocations: 260)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 43)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 0.4ms | Allocations: 11922)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-13 00:33:51 -0400
+Processing by PublicController#main as HTML
+  Rendering public/main.html.erb within layouts/application
+  [1m[36mProperty Load (0.5ms)[0m  [1m[34mSELECT "properties".* FROM "properties" ORDER BY "properties"."created_at" DESC[0m
+  ↳ app/views/properties/_list.html.erb:1
+  Rendered properties/_list.html.erb (Duration: 3.2ms | Allocations: 1261)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/posts/_list.html.erb:1
+  Rendered posts/_list.html.erb (Duration: 1.8ms | Allocations: 816)
+  Rendered public/main.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2209)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/nav/_public.html.erb (Duration: 0.3ms | Allocations: 214)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 43)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.9ms | Allocations: 12997)
+
+
