@@ -10,6 +10,7 @@
 </main>
 
 <div class="container">
+  <%= image_tag  @post.image.thumb.url, class: "float-right mb-4 ml-4" if @post.image.present?  %>
   <strong>Title:</strong>
   
   <%= simple_format @post.body %>

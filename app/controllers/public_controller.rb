@@ -7,5 +7,6 @@ class PublicController < ApplicationController
     end
 
     @properties = Property.latest
+    @posts = Post.latest
   end
 end

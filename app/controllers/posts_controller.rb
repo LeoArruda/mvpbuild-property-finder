@@ -12,7 +12,6 @@ class PostsController < ApplicationController
 
   def latest
     @posts = Post.active
-    # @posts = Post.where(active: true)
   end
 
   # GET /posts/1
